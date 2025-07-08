@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+:root {
+    --linear-buttons: linear-gradient(90deg, #B872FF, #144480);
+    --lilac: #B872FF;
+    --blue-deep: #01080E;
+    --blue-md: #041832;
+    --blue-royal: #144480;
+    --bottom-cards: rgba(255, 255, 255, 0.5);
+    --stopwatch-bg: rgba(20, 68, 128, 0.3);
+    --bottom-tasks: rgba(0, 244, 191, 0.4);
+    --check: #02CDA1;
+
+    --ff: "Unbounded", sans-serif;
+
+    --heading-display: 4.3em/120% var(--ff);
+    --heading-lg: 2.986em/120% var(--ff);
+    --heading: 2.488em/120% var(--ff);
+    --heading-sm: 2.074em/120% var(--ff);
+    --subtitle-lg: 1.728em/120% var(--ff);
+    --subtitle: 1.44em/150% var(--ff);
+    --text-lg: 1.2em/150% var(--ff);
+    --text: 1.2em/150% var(--ff);
+    --label: .8em/150% var(--ff)
+}
+
+[data-contexto="focus"] {
+    --main-bg-color: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
+}
+
+[data-contexto="long-rest"] {
+    --main-bg-color: linear-gradient(180deg, #0F725C 0%, #041832 48.44%, #01080E 100%);
+}
+
+[data-contexto="short-rest"] {
+    --main-bg-color: linear-gradient(180deg, #1875E9 0%, #041832 48.44%, #01080E 100%);
+}
+
