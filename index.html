@@ -36,7 +36,7 @@
                     <li class="type-option">Descanso curto</li>
                     <li class="type-option">Descanso longo</li>
                 </ul>
-                
+
                 <div id="timer" class="container">25:00</div>
 
                 <div id="go" class="grid gap-24">
@@ -50,6 +50,90 @@
                 </div>
             </div>
 
+        </section>
+
+        <section id="tasks">
+            <header class="display container">
+                <small>#Em andamento:</small>
+                <strong class="in-progress">Nome da tarefa em andamento</strong>
+            </header>
+
+            <div class="flex container">
+                <h2>Lista de tarefas:</h2>
+
+                <div class="delete-tasks flex container">
+                    <button class="more">
+                        <img src="src/assets/icons/more.svg" alt="">
+                    </button>
+
+                    <ul role="list" class="more-list gap-16">
+                        <li>
+                            <button class="flex gap-8">
+                                <img src="src/assets/icons/check.svg" alt="">
+                                Limpar tarefas concluídas
+                            </button>
+                        </li>
+                        <li>
+                            <button class="flex gap-8">
+                                <img src="src/assets/icons/delete.svg" alt="">
+                                Limpar todas as tarefas
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <ul class="list-tasks container grid gap-8" role="list">
+                <li class="flex">
+                    <div class="flex gap-16">
+                        <img src="src/assets/icons/check-default.svg" alt="">
+                        <p>Tarefa pendente</p>
+                    </div>
+
+                    <img src="src/assets/icons/edit.png" alt="">
+                </li>
+
+                <li class="flex">
+                    <div class="flex gap-16">
+                        <img src="src/assets/icons/check-default.svg" alt="">
+                        <p>Tarefa pendente</p>
+                    </div>
+
+                    <img src="src/assets/icons/edit.png" alt="">
+                </li>
+            </ul>
+
+            <form class="container">
+                <div>
+                    <legend>Adicionando tarefa</legend>
+                    <textarea name="task" id="task" rows="4" class="container"
+                        placeholder="No que você está trabalhando?" required></textarea>
+                </div>
+
+                <footer class="flex">
+                    <button class="flex">
+                        <img src="src/assets/icons/trash.svg" alt="">
+                        Deletar
+                    </button>
+
+                    <div class="flex gap-16">
+                        <button class="flex">
+                            <img src="src/assets/icons/close.png" alt="">
+                            Cancelar
+                        </button>
+
+                        <button class="flex saved">
+                            <img src="src/assets/icons/save.png" alt="">
+                            Salvar
+                        </button>
+                    </div>
+                </footer>
+            </form>
+
+            <button class="flex container gap-8">
+                    <img src="src/assets/icons/add-task.svg" alt=""> Adicionar nova tarefa
+            </button>
         </section>
     </main>
 </body>

@@ -43,14 +43,14 @@
     .type-selected {
         font: var(--text-lg);
     }
+
+    .container {
+        --max-width: 36.75rem;
+    }
 }
 
 @media (width >=80rem) {
     .display {
         display: flex;
-    }
-
-    .container {
-        width: 100%;
     }
 }

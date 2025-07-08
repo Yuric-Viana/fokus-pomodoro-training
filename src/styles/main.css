@@ -6,16 +6,18 @@
     --blue-deep: #01080E;
     --blue-md: #041832;
     --blue-royal: #144480;
-    --bottom-cards: #1B293B;
+    --bottom-cards: rgba(255, 255, 255, 0.5);
     --stopwatch-bg: rgba(20, 68, 128, 0.3);
     --bottom-tasks: rgba(0, 244, 191, 0.4);
     --check: #02CDA1;
 
     --ff-mont: "Montserrat", sans-serif;
-    
+
     --text-bold: 600 1.125rem/150% var(--ff-mont);
     --text-md: 1.125rem/150% var(--ff-mont);
+    --text-sm: 0.9375rem/150% var(--ff-mont);
     --label-mont: .78rem/150% var(--ff-mont);
+    --label-button: bold .75rem/150% var(--ff-mont);
 
     --ff: "Unbounded", sans-serif;
 
@@ -114,6 +116,7 @@ img {
             & li {
                 font: var(--label-mont);
                 white-space: nowrap;
+                cursor: pointer;
             }
         }
 
@@ -125,7 +128,7 @@ img {
 
         & div#go {
             justify-content: center;
-            
+
             & div:nth-child(1) {
                 justify-content: center;
 
@@ -143,6 +146,7 @@ img {
                         width: 100%;
                         height: 100%;
                         opacity: 0;
+                        cursor: pointer;
                     }
 
                     &::before {
@@ -178,6 +182,7 @@ img {
                 text-align: center;
                 font: var(--text-bold);
                 position: relative;
+                cursor: pointer;
 
                 &::after {
                     content: '';
@@ -193,9 +198,176 @@ img {
     }
 }
 
+#tasks {
+    & header {
+        margin-top: 2rem;
+        text-align: center;
+        border-bottom: 2px solid var(--blue-royal);
+        margin-bottom: 2.5rem;
+
+        & small {
+            font: var(--label-mont);
+            margin-bottom: 1rem;
+        }
+
+        & strong {
+            font: var(--text-bold);
+        }
+    }
+
+    &>div {
+        margin-bottom: 1.5rem;
+
+        & h2 {
+            font: 1.5em/120% var(--ff);
+            white-space: nowrap;
+        }
+
+        & div.delete-tasks {
+            position: relative;
+
+            &:hover ul.more-list {
+                display: grid;
+            }
+
+            & button.more {
+                background-color: transparent;
+                border: none;
+                outline: inherit;
+                margin-left: auto;
+                cursor: pointer;
+            }
+
+            & .more-list {
+                background-color: #1B293B;
+                width: max-content;
+                padding: 1rem;
+                border-radius: .6rem;
+                outline: 2px solid var(--blue-royal);
+                display: none;
+
+                position: absolute;
+                top: 100%;
+                right: 0;
+                z-index: 10;
+
+                & li {
+                    & button {
+                        background-color: transparent;
+                        width: 100%;
+                        border: none;
+                        color: white;
+                        font: var(--text-sm);
+                        cursor: pointer;
+                        align-items: center;
+                    }
+
+                    & img {
+                        height: 1.5rem;
+                        width: 1.5rem;
+                    }
+                }
+            }
+        }
+
+    }
+
+    & ul.list-tasks {
+        & .completed {
+            background-color: rgba(0, 244, 191, 0.4);
+        }
+
+        & li {
+            background-color: var(--bottom-cards);
+            justify-content: space-between;
+            padding: 1rem;
+            border-radius: .6rem;
+            cursor: pointer;
+
+            & div {
+                align-items: center;
+            }
+
+            & img {
+                width: 2rem;
+            }
+        }
+    }
+
+    & form {
+        background-color: var(--bottom-cards);
+        margin-top: .5rem;
+        border-radius: .6rem;
+        padding: .75rem 1rem;
+
+        & div {
+            & legend {
+                font: var(--heading-sm);
+                color: var(--blue-deep);
+                margin-bottom: 2rem;
+            }
+
+            & textarea {
+                width: 100%;
+                border-radius: .4rem;
+                background-color: #98A0A8;
+                border: none;
+                padding: 1rem;
+                font: var(--text-md);
+                color: #373737;
+            }
+        }
+
+        & footer {
+            justify-content: space-between;
+            padding-block: 2rem .8rem;
+
+            & button {
+                background-color: transparent;
+                border: none;
+                align-items: center;
+                gap: .25rem;
+                font: var(--label-button);
+                cursor: pointer;
+            }
+
+            & button.saved {
+                background-color: var(--blue-deep);
+                color: white;
+                padding: 0.39rem 1rem;
+                border-radius: 2rem;
+                gap: .6rem;
+
+                & img {
+                    width: 1rem;
+                }
+            }
+        }
+    }
+
+    & > button {
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        outline: 2px solid var(--lilac);
+        border-radius: 2rem;
+        color: var(--lilac);
+        margin-top: 2.5rem;
+        padding-block: 1.125rem;
+        justify-content: center;
+
+        & img {
+            width: 1.5rem;
+        }
+    }
+}
+
+
 @media (width >=48rem) {
     :root {
         --heading-lg: bold 3.3125rem/120% var(--ff);
+        --px: 5.625rem;
+        --label-button: 600 1.125rem/150% var(--ff-mont);
     }
 
     #app {
@@ -209,6 +381,16 @@ img {
 
                     & strong {
                         font-weight: bold;
+                    }
+                }
+
+                & figure {
+                    width: max-content;
+                    margin-inline: auto;
+
+                    &img {
+                        width: 25.85rem;
+                        margin-inline: auto;
                     }
                 }
             }
@@ -236,10 +418,22 @@ img {
     }
 
     #tasks {
-        & > div {
+        & header {
             display: flex;
-            width: max-content;
-        }   
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            text-align: start;
+
+            & small {
+                margin-bottom: unset;
+                width: 11.25rem;
+            }
+        }
+
+        & form {
+            padding-bottom: 1.8rem;
+        }
     }
 }
 
@@ -253,6 +447,10 @@ img {
                     width: 30.625rem;
                 }
             }
+        }
+
+        & #banner figure img {
+            width: 20.85rem;
         }
     }
 
