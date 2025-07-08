@@ -362,6 +362,17 @@ img {
     }
 }
 
+footer.footer-credits {
+    background-color: #010B15;
+    margin-top: 5rem;
+    padding-block: 1.75rem;
+    text-align: center;
+
+    & p {
+        color: #B6B6B6;
+        font: var(--text-sm);
+    }
+}
 
 @media (width >=48rem) {
     :root {
