@@ -14,25 +14,109 @@
     --ff: "Unbounded", sans-serif;
 
     --heading-display: 4.3em/120% var(--ff);
-    --heading-lg: 2.986em/120% var(--ff);
+    --heading-lg: 1.625rem/120% var(--ff);
     --heading: 2.488em/120% var(--ff);
     --heading-sm: 2.074em/120% var(--ff);
     --subtitle-lg: 1.728em/120% var(--ff);
     --subtitle: 1.44em/150% var(--ff);
     --text-lg: 1.2em/150% var(--ff);
     --text: 1.2em/150% var(--ff);
-    --label: .8em/150% var(--ff)
+    --label: .8em/150% var(--ff);
+
+    --px: 1.5rem;
 }
 
-[data-contexto="focus"] {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+[data-context="focus"] {
     --main-bg-color: linear-gradient(180deg, #8B1FF8 0%, #041832 48.44%, #01080E 100%);
 }
 
-[data-contexto="long-rest"] {
+[data-context="long-rest"] {
     --main-bg-color: linear-gradient(180deg, #0F725C 0%, #041832 48.44%, #01080E 100%);
 }
 
-[data-contexto="short-rest"] {
+[data-context="short-rest"] {
     --main-bg-color: linear-gradient(180deg, #1875E9 0%, #041832 48.44%, #01080E 100%);
 }
 
+html {
+    background: var(--main-bg-color);
+    min-height: 100vh;
+}
+
+body {
+    color: #FFFFFF;
+}
+
+img {
+    width: 100%;
+}
+
+#app {
+    & header {
+        justify-content: center;
+        padding-block: 2.5rem;
+
+        & figure {
+            width: max-content;
+        }
+    }
+
+    & section#banner {
+        & div.display {
+            margin-top: 1.5rem;
+            align-items: center;
+
+            & h1 {
+                font: var(--heading-lg);
+                font-weight: 200;
+
+                & strong {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+@media (width >=48rem) {
+    :root {
+        --heading-lg: bold 3.3125rem/120% var(--ff);
+    }
+
+    main#app {
+        & section#banner {
+            & div.display {
+                justify-content: center;
+
+                & h1 {
+                    font: var(--heading-lg);
+                    font-weight: 200;
+                    
+                    & strong {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (width >=80rem) {
+    main#app {
+        & section#banner {
+            & div.display {
+                margin-top: 5rem;
+
+                & h1 {
+                    width: 30.625rem;
+                }
+            }
+        }
+    }
+}
