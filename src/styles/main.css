@@ -226,7 +226,8 @@ img {
         & div.delete-tasks {
             position: relative;
 
-            &:hover ul.more-list {
+            & button.more:hover+ul.more-list,
+            ul.more-list:hover {
                 display: grid;
             }
 
@@ -283,6 +284,8 @@ img {
             padding: 1rem;
             border-radius: .6rem;
             cursor: pointer;
+            color: var(--blue-deep);
+            font: 600 1.125rem/150% var(--ff-mont);
 
             & div {
                 align-items: center;
@@ -345,7 +348,7 @@ img {
         }
     }
 
-    & > button {
+    &>button {
         align-items: center;
         background-color: transparent;
         border: none;
@@ -355,6 +358,7 @@ img {
         margin-top: 2.5rem;
         padding-block: 1.125rem;
         justify-content: center;
+        cursor: pointer;
 
         & img {
             width: 1.5rem;
