@@ -66,6 +66,7 @@ body {
     color: #FFFFFF;
     min-height: 100vh;
     background: url(../assets/pattern.png) no-repeat bottom/cover;
+    margin-inline: auto;
 }
 
 img {
@@ -83,17 +84,26 @@ img {
     }
 
     & section#banner {
-        & div.display {
+        & div {
             margin-top: 1.5rem;
             align-items: center;
+            margin-inline: auto;
+            gap: 4rem;
 
             & h1 {
                 font: var(--heading-lg);
                 font-weight: 200;
+                max-width: 30rem;
+                margin-left: auto;
+
 
                 & strong {
                     font-weight: 400;
                 }
+            }
+
+            & figure img {
+                width: 100%;
             }
         }
     }
@@ -107,6 +117,7 @@ img {
         padding: 1.5rem 1rem;
         border-radius: 1.4rem;
         outline: 2px solid var(--blue-royal);
+        margin-inline: auto;
 
         & ul {
             gap: .5rem;
@@ -124,6 +135,7 @@ img {
             width: max-content;
             font: 600 3.375rem var(--ff);
             margin-block: 2rem;
+            margin-inline: auto;
         }
 
         & div#go {
@@ -302,6 +314,7 @@ img {
         margin-top: .5rem;
         border-radius: .6rem;
         padding: .75rem 1rem;
+        display: none;
 
         & div {
             & legend {
@@ -334,15 +347,19 @@ img {
                 cursor: pointer;
             }
 
-            & button.saved {
-                background-color: var(--blue-deep);
-                color: white;
-                padding: 0.39rem 1rem;
-                border-radius: 2rem;
-                gap: .6rem;
+            &>div {
+                gap: .4rem;
 
-                & img {
-                    width: 1rem;
+                & button.saved {
+                    background-color: var(--blue-deep);
+                    color: white;
+                    padding: 0.3rem .8rem;
+                    border-radius: 2rem;
+                    gap: .6rem;
+
+                    & img {
+                        width: .8rem;
+                    }
                 }
             }
         }
@@ -457,10 +474,7 @@ footer.footer-credits {
         & section#banner {
             & div.display {
                 margin-top: 5rem;
-
-                & h1 {
-                    width: 30.625rem;
-                }
+                width: max-content;
             }
         }
 
@@ -472,6 +486,24 @@ footer.footer-credits {
     #card {
         & div.time-card {
             margin-top: 5rem;
+        }
+    }
+
+    #tasks form footer {
+        &>div {
+            gap: 1rem;
+
+            & button.saved {
+                background-color: var(--blue-deep);
+                color: white;
+                padding: 0.39rem 1rem;
+                border-radius: 2rem;
+                gap: .6rem;
+
+                & img {
+                    width: 1rem;
+                }
+            }
         }
     }
 }

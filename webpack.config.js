@@ -25,15 +25,22 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.(mp3|wav|ogg)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'src/sons/[name][ext]'
+                }
             }
-        ],
 
+        ],
     },
     devServer: {
         static: {
             directory: path.resolve(__dirname, 'dist')
         },
-        port: 3333,
+        port: 3000,
         open: true,
         liveReload: true
     },

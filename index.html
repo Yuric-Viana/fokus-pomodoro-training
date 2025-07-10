@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fokus</title>
-
-    <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -18,31 +16,31 @@
         </header>
 
         <section id="banner">
-            <div class="display container gap-24">
+            <div class="display">
                 <h1 class="description">
                     Otimize sua produtividade,
                     <strong>mergulhe no que importa</strong>
                 </h1>
                 <figure>
-                    <img class="banner-toggle" src="src/assets/foco.png" alt="">
+                    <img class="banner-toggle" src="src/assets/focus.png" alt="">
                 </figure>
             </div>
         </section>
 
         <section id="card">
-            <div class="time-card container">
+            <div class="time-card">
                 <ul class="type flex" role="list">
                     <li class="type-option type-selected focus">Foco</li>
-                    <li class="type-option long-rest">Descanso curto</li>
-                    <li class="type-option short-rest">Descanso longo</li>
+                    <li class="type-option short-rest">Descanso curto</li>
+                    <li class="type-option long-rest">Descanso longo</li>
                 </ul>
 
-                <div id="timer" class="container">25:00</div>
+                <div id="timer" class="">25:00</div>
 
                 <div id="go" class="grid gap-24">
                     <div class="flex gap-16">
                         <div class="input">
-                            <input type="checkbox" name="check" id="check">
+                            <input class="music-check" type="checkbox" name="check" id="check">
                         </div>
                         <p>Música</p>
                     </div>
@@ -55,7 +53,7 @@
         <section id="tasks">
             <header class="display container">
                 <small>#Em andamento:</small>
-                <strong class="in-progress">Nome da tarefa em andamento</strong>
+                <strong class="in-progress"></strong>
             </header>
 
             <div class="flex container">
@@ -84,25 +82,7 @@
 
             </div>
 
-            <ul class="list-tasks container grid gap-8" role="list">
-                <li class="flex">
-                    <div class="flex gap-16">
-                        <img src="src/assets/icons/check-default.svg" alt="">
-                        <p>Tarefa pendente</p>
-                    </div>
-
-                    <img src="src/assets/icons/edit.png" alt="">
-                </li>
-
-                <li class="flex">
-                    <div class="flex gap-16">
-                        <img src="src/assets/icons/check-default.svg" alt="">
-                        <p>Tarefa pendente</p>
-                    </div>
-
-                    <img src="src/assets/icons/edit.png" alt="">
-                </li>
-            </ul>
+            <ul class="list-tasks container grid gap-8" role="list"></ul>
 
             <form class="container">
                 <div>
@@ -112,18 +92,18 @@
                 </div>
 
                 <footer class="flex">
-                    <button class="flex">
+                    <button type="button" class="button-delete flex">
                         <img src="src/assets/icons/trash.svg" alt="">
                         Deletar
                     </button>
 
-                    <div class="flex gap-16">
-                        <button class="flex">
+                    <div class="flex">
+                        <button type="button" class="button-cancel flex">
                             <img src="src/assets/icons/close.png" alt="">
                             Cancelar
                         </button>
 
-                        <button class="flex saved">
+                        <button type="submit" class="flex saved">
                             <img src="src/assets/icons/save.png" alt="">
                             Salvar
                         </button>
@@ -131,7 +111,7 @@
                 </footer>
             </form>
 
-            <button class="flex container gap-8">
+            <button class="add-task flex container gap-8">
                     <img src="src/assets/icons/add-task.svg" alt=""> Adicionar nova tarefa
             </button>
         </section>
