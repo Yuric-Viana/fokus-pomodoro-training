@@ -206,6 +206,10 @@ img {
                     top: .8rem;
                 }
             }
+
+            & button.pause::after {
+                background: url(../assets/pause.png) no-repeat;
+            }
         }
     }
 }
@@ -229,9 +233,10 @@ img {
 
     &>div {
         margin-bottom: 1.5rem;
+        align-items: center;
 
         & h2 {
-            font: 1.5em/120% var(--ff);
+            font: 1.2em/120% var(--ff);
             white-space: nowrap;
         }
 
@@ -461,6 +466,10 @@ footer.footer-credits {
                 margin-bottom: unset;
                 width: 11.25rem;
             }
+        }
+
+        & > div h2 {
+            font: 1.5em/120% var(--ff);
         }
 
         & form {

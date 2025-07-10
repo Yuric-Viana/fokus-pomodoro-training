@@ -1,21 +1,7 @@
-// import 'src/sons/luna-rise-part-one.mp3';
-
 const html = document.querySelector('html')
 const optionSelected = document.querySelectorAll('.type-option')
 const description = document.querySelector('.description')
 const banner = document.querySelector('.banner-toggle')
-const musicCheck = document.querySelector('.music-check')
-
-// const music = new Audio('./src/sons/luna-rise-part-one.mp3');
-// music.loop = true
-
-// musicCheck.addEventListener('change', () => {
-//     if(music.paused) {
-//         music.play()
-//     } else {
-//         music.pause()
-//     }
-// })
 
 optionSelected.forEach(type => {
     type.addEventListener('click', (event) => {
@@ -26,8 +12,6 @@ optionSelected.forEach(type => {
         event.target.classList.add('type-selected')
 
         let typeSelected = event.target.classList[1]
-        console.log(typeSelected);
-        
 
         toggleContext({ context: typeSelected })
     })

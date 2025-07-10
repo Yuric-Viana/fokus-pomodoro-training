@@ -32,6 +32,19 @@ module.exports = {
                 generator: {
                     filename: 'src/sons/[name][ext]'
                 }
+            },
+
+            {
+                test: /\.(mp3|wav|ogg)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: path.resolve(__dirname, 'dist', 'src', 'sons')
+                        },
+                    },
+                ]
             }
 
         ],
