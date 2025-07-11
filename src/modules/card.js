@@ -1,7 +1,10 @@
+import { setCountdown } from "./timer.js"
+
 const html = document.querySelector('html')
 const optionSelected = document.querySelectorAll('.type-option')
 const description = document.querySelector('.description')
 const banner = document.querySelector('.banner-toggle')
+const timer = document.getElementById('timer')
 
 optionSelected.forEach(type => {
     type.addEventListener('click', (event) => {
@@ -24,12 +27,15 @@ function toggleContext({ context }) {
     switch (context) {
         case 'focus':
             description.innerHTML = `Otimize sua produtividade, <strong>mergulhe no que importa</strong>`
+            setCountdown(1500)
             break
         case 'short-rest':
             description.innerHTML = `Que tal dar uma respirada? <strong>Faça uma pausa curta!</strong>`
+            setCountdown(300)
             break
         case 'long-rest':
             description.innerHTML = `Hora de voltar à superfície. <strong>Faça uma pausa longa.</strong>`
+            setCountdown(900)
             break
         default:
             break
