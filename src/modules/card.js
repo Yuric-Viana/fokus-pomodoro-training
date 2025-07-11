@@ -4,7 +4,6 @@ const html = document.querySelector('html')
 const optionSelected = document.querySelectorAll('.type-option')
 const description = document.querySelector('.description')
 const banner = document.querySelector('.banner-toggle')
-const timer = document.getElementById('timer')
 
 optionSelected.forEach(type => {
     type.addEventListener('click', (event) => {

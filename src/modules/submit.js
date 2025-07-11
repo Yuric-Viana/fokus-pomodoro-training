@@ -7,10 +7,10 @@ export const textTask = document.getElementById('task')
 form.onsubmit = (event) => {
     event.preventDefault()
 
-    const taskValue = textTask.value
+    let taskValue = textTask.value
     textTask.value = ''
 
-    const taskCreate = showTask({ task: taskValue })
-    
-    listTasks.append(taskCreate)
+    const taskCreate = showTask({ task: taskValue })    
+
+    listTasks.append(taskCreate.li)
 }

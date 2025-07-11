@@ -1,9 +1,10 @@
+import { taskFinished } from "./events.js"
 import { musicFinally } from "./music.js"
 import { toggleButton } from "./events.js"
 
 const screenTime = document.getElementById('timer')
 
-let idInterval = null
+export let idInterval = null
 export let countdown = 1500
 
 export function regressive() {
@@ -11,15 +12,47 @@ export function regressive() {
     showTime()
 
     if (countdown <= 0) {
-        musicFinally()
-        alert('Parabéns, você finalizou sua tarefa!')
-        reset()
-        return
-    }
+        const itemPersonalized = document.querySelector('.item-list.item-personalized')
+        let imgCheck = document.querySelector('.img-check')
 
+        if (itemPersonalized) {
+            taskFinished({
+                itemFinished: itemPersonalized
+            })
+
+            itemPersonalized.classList.remove('item-personalized')
+            alert('Parabéns, você finalizou sua tarefa!')
+            imgCheck.setAttribute('src', 'src/assets/icons/check-green.svg')
+            itemPersonalized.style.border = 'none'
+        } else {
+            alert('Tempo finalizado!')
+        }
+
+        musicFinally()
+        reset()
+        toggleButton.classList.remove('pause')
+        toggleButton.textContent = 'Começar'
+    }
 }
 
 toggleButton.addEventListener('click', init)
+
+function reset() {
+    clearInterval(idInterval)
+    idInterval = null
+    countdown = getCountdown()
+    showTime()
+}
+
+function getCountdown() {
+    const selected = document.querySelector('.type-option.type-selected')
+
+    if (selected.classList.contains('focus')) return 1500
+    if (selected.classList.contains('short-rest')) return 300
+    if (selected.classList.contains('long-rest')) return 900
+
+    return 0
+}
 
 function init() {
     if (idInterval) {
@@ -27,14 +60,7 @@ function init() {
         return
     }
 
-    idInterval = setInterval(() => {
-        regressive()
-    }, 1000)
-}
-
-function reset() {
-    clearInterval(idInterval)
-    idInterval = null
+    idInterval = setInterval(regressive, 1000)
 }
 
 export function showTime() {
@@ -43,10 +69,6 @@ export function showTime() {
         second: '2-digit'
     })
     screenTime.innerHTML = `${time}`
-}
-
-export function getCountdown() {
-    return countdown
 }
 
 export function setCountdown(value) {
