@@ -1,8 +1,8 @@
-import { toggleButton } from './events.js'
-import soundFile from '../sons/luna-rise-part-one.mp3'
-import soundFilePlay from '../sons/play.wav'
-import soundFilePause from '../sons/pause.mp3'
-import soundFileFinally from '../sons/beep.mp3'
+import { toggleButton } from '../events.js'
+import soundFile from '../../sons/luna-rise-part-one.mp3'
+import soundFilePlay from '../../sons/play.wav'
+import soundFilePause from '../../sons/pause.mp3'
+import soundFileFinally from '../../sons/beep.mp3'
 
 const musicCheck = document.querySelector('.music-check')
 

@@ -1,4 +1,4 @@
-import { textTask, form } from "./submit.js"
+import { textTask, form } from "./form/submit.js"
 
 export const toggleButton = document.getElementById('toggle-button')
 const buttonDelete = document.querySelector('.button-delete')

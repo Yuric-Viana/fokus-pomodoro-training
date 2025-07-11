@@ -1,6 +1,5 @@
-import { taskFinished } from "./events.js"
+import { taskFinished, toggleButton } from "../events.js"
 import { musicFinally } from "./music.js"
-import { toggleButton } from "./events.js"
 
 const screenTime = document.getElementById('timer')
 

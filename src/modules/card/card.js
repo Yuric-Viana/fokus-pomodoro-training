@@ -1,4 +1,4 @@
-import { setCountdown } from "./timer.js"
+import { setCountdown } from "../card/timer"
 
 const html = document.querySelector('html')
 const optionSelected = document.querySelectorAll('.type-option')
