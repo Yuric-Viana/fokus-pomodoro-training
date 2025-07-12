@@ -2,7 +2,7 @@ import { apiConfig } from "./api-config.js"
 
 export async function newTask({ id, task }) {
     try {
-        await fetch(`${apiConfig.baseURL}/tasks`, {
+        await fetch(apiConfig.baseURL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
