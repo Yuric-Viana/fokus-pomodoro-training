@@ -1,5 +1,4 @@
 import { tasksCancel, cancelTasksAll } from "../services/tasks-cancel.js"
-import { listTasks } from "../form/show-task.js"
 import { tasksDay } from "./load.js"
 
 const deleteTasks = document.querySelector('.more-list')

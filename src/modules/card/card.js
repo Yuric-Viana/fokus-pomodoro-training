@@ -26,7 +26,7 @@ function toggleContext({ context }) {
     switch (context) {
         case 'focus':
             description.innerHTML = `Otimize sua produtividade, <strong>mergulhe no que importa</strong>`
-            setCountdown(2)
+            setCountdown(1500)
             break
         case 'short-rest':
             description.innerHTML = `Que tal dar uma respirada? <strong>Faça uma pausa curta!</strong>`

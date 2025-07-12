@@ -5,7 +5,7 @@ import { updateTaskFinished } from "../services/new-task.js"
 const screenTime = document.getElementById('timer')
 
 export let idInterval = null
-export let countdown = 2
+export let countdown = 1500
 
 export async function regressive() {
     countdown -= 1
@@ -13,19 +13,21 @@ export async function regressive() {
 
     if (countdown <= 0) {
         const itemPersonalized = document.querySelector('.item-list.item-personalized')
-        
-        
+
+
         if (itemPersonalized) {
             taskFinished({
                 itemFinished: itemPersonalized
             })
-            
-            
-            const { id } = itemPersonalized.dataset        
+
+
+            const { id } = itemPersonalized.dataset
             itemPersonalized.classList.remove('item-personalized')
             itemPersonalized.classList.add('task-finished')
             itemPersonalized.style.border = 'none'
-            
+
+            const taskValue = itemPersonalized.textContent           
+
             let imgCheck = document.querySelectorAll('.task-finished .img-check')
 
             imgCheck.forEach(img => {
@@ -38,7 +40,7 @@ export async function regressive() {
         } else {
             alert('Tempo finalizado!')
         }
-        
+
         reset()
         musicFinally()
         toggleButton.classList.remove('pause')
@@ -58,7 +60,7 @@ function reset() {
 function getCountdown() {
     const selected = document.querySelector('.type-option.type-selected')
 
-    if (selected.classList.contains('focus')) return 2
+    if (selected.classList.contains('focus')) return 1500
     if (selected.classList.contains('short-rest')) return 300
     if (selected.classList.contains('long-rest')) return 900
 
