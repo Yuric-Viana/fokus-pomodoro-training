@@ -20,6 +20,7 @@ export function regressive() {
             })
 
             itemPersonalized.classList.remove('item-personalized')
+            itemPersonalized.classList.add('task-finished')
             alert('Parabéns, você finalizou sua tarefa!')
             imgCheck.setAttribute('src', 'src/assets/icons/check-green.svg')
             itemPersonalized.style.border = 'none'

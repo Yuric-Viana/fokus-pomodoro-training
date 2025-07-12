@@ -1,16 +1,18 @@
-import { showTask } from "../form/show-task.js"
+import { tasksDay } from "../tasks/load.js"
+import { newTask } from "../services/new-task.js"
 
 export const form = document.querySelector('form')
-export const listTasks = document.querySelector('.list-tasks')
 export const textTask = document.getElementById('task')
 
-form.onsubmit = (event) => {
+form.onsubmit = async (event) => {
     event.preventDefault()
 
     let taskValue = textTask.value
     textTask.value = ''
+    
+    const id = String(new Date().getTime())
+    
+    await newTask({ id, task: taskValue })
 
-    const taskCreate = showTask({ task: taskValue })    
-
-    listTasks.append(taskCreate.li)
+    await tasksDay()
 }
