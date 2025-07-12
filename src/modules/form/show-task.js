@@ -1,5 +1,5 @@
 export const listTasks = document.querySelector('.list-tasks')
-const inProgress = document.querySelector('.in-progress')
+export const inProgress = document.querySelector('.in-progress')
 
 export function showTask({ taskIncluded }) {
     listTasks.innerHTML = ''
