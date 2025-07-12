@@ -21,11 +21,20 @@ export async function cancelTasksAll() {
     }
 }
 
-export async function tasksCancel({ id }) {
+export async function tasksCancel() {
     try {
-        await fetch(`${apiConfig.baseURL}/${id}`, {
-            method: 'DELETE'
-        })
+        const response = await fetch(apiConfig.baseURL)
+        const tasks = await response.json()
+
+        const finishedTasks = tasks.filter(task => task.finished === 'task-finished')
+
+        await Promise.all(
+            finishedTasks.map(task =>
+                fetch(`${apiConfig.baseURL}/${task.id}`, {
+                    method: 'DELETE'
+                })
+            )
+        )
 
         alert('Tarefas excluidas com sucesso.')
 
