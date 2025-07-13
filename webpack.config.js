@@ -32,13 +32,6 @@ module.exports = {
                 generator: {
                     filename: 'src/sons/[name][ext]'
                 }
-            },
-            {
-                test: /\.(mp3|wav|ogg)$/,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'src/sons/[name][ext]'
-                }
             }
 
         ],
